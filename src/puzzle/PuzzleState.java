@@ -9,13 +9,20 @@ public class PuzzleState implements GPSState{
 
     private int[][] board = new int[3][3];
 
-    private int[] cero;
+    private int[] cero = new int[2];
 
     public PuzzleState(int[][] board){
-
-        //TODO: ver como setear la posicion del cero...
-
+        //en el getInitState hay que pasarle los parametros como para que inicie!
         this.board = board;
+
+        for (int i = 0 ; i < 3 ; i++){
+            for (int j = 0 ; j < 3 ; j++){
+                if(board[i][j] == 0){
+                    cero[0] = i;
+                    cero[1] = j;
+                }
+            }
+        }
     }
 
     @Override

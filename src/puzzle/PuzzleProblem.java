@@ -9,12 +9,24 @@ import java.util.List;
 public class PuzzleProblem implements GPSProblem{
     @Override
     public GPSState getInitState() {
-        return null; //aca habria que crear el estado inicial con numeros random...
+
+        int[][] initial = { {5, 4, 7},
+                            {0, 2, 1},
+                            {3, 6, 8}
+        };
+
+        return new PuzzleState(initial);
     }
 
     @Override
     public GPSState getGoalState() {
-        return null; //ver si estan todos ordenados...
+
+        int[][] goal = { {1, 2, 3},
+                {8, 0, 4},
+                {7, 6, 5}
+        };
+
+        return new PuzzleState(goal);
     }
 
     @Override
